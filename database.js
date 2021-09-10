@@ -1,9 +1,4 @@
 const mongoose = require('mongoose')
-mongoose.set('newUrlParser', true)
-mongoose.set('newUrlParser', true)
-mongoose.set('useFindAndModify', false)
-mongoose.set('useUnifiedTopology', true)
-
 class Database {
 
     constructor() {
