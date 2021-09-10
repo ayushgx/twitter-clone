@@ -3,12 +3,12 @@ const middleware = require('./middleware')
 const path = require('path')
 const app = express()
 const bodyParser = require('body-parser')
-
 const PORT = process.env.PORT || 3000
+const mongoose = require('./database')
 
 app.listen(PORT, () => {
     console.log(`Server runnong on port ${PORT}`)
-})
+}) 
 
 app.set("view engine", "pug")
 app.set("views", "views")
