@@ -1,3 +1,4 @@
+include ../mixins/mixins
 doctype html
 html(lang="en")
     head
@@ -6,9 +7,35 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title #{pageTitle}
         link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU', crossorigin='anonymous')
+        link(rel="stylesheet", href="css/main.css")
     body
-        block content
+        .wapper
+            .row
+                nav.col-2
+                    a(href="/")
+                        i.fas.fa-dove.color-blue
+                    a(href="/")
+                        i.fas.fa-home
+                    a(href="/search")
+                        i.fas.fa-search
+                    a(href="/notifications")
+                        i.fas.fa-bell
+                    a(href="/messages")
+                        i.fas.fa-envelope
+                    a(href="/profile")
+                        i.fas.fa-user
+                    a(href="/logout")
+                        i.fas.fa-sign-out-alt
+        
+                .mainSectionContainer.col-10.col-md-8.col-lg-6
+                    .titleContainer
+                        h1 #{pageTitle}
+                    block content
+                .d-none.d-md-block.col-md-2.col-lg-4
 
+        script(src='https://kit.fontawesome.com/22fb1ec03c.js', crossorigin='anonymous')
         script(src='https://code.jquery.com/jquery-3.6.0.min.js', integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=', crossorigin='anonymous')
         script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js')
         script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js', integrity='sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/', crossorigin='anonymous')
+
+        script(src="/js/common.js") 

@@ -8,7 +8,7 @@ const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 3000
 const mongoose = require('./database')
 
-console.log(process.env)
+// console.log(process.env)
 
 app.listen(PORT, () => {
     console.log(`Server runnong on port ${PORT}`)
@@ -28,9 +28,16 @@ app.use(session({
 //Routes
 const loginRoute = require('./routes/loginRoutes')
 const registerRoute = require('./routes/registerRoutes')
+const logoutRoute = require('./routes/logoutRoutes')
+
+//api routes
+const postsApiRoute = require('./routes/api/posts')
 
 app.use("/login", loginRoute)
 app.use("/register", registerRoute)
+app.use("/logout", logoutRoute)
+
+app.use("/api/posts", postsApiRoute)
 
 app.get('/', middleware.requireLogin, (req, res, next) => {
 
